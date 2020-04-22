@@ -1,0 +1,16 @@
+<!-- views/ihm/group.ejs -->
+
+<% if (content.hasOwnProperty('Name')) { %>
+    <fieldset><legend>
+    <%= content['Name'] %>
+    </legend>
+    
+<% } else { %>
+    <fieldset><legend>  </legend>
+<% } %>
+
+<% if ( content.hasOwnProperty('content')) { %>
+    <%- include ("./readJsonContent", {content:content['content']} ) %>
+<% } %>
+
+</fieldset>

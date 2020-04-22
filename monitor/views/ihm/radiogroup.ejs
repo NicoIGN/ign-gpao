@@ -1,0 +1,19 @@
+<!-- views/ihm/radiogroup.ejs -->
+
+<p> <%= content['Name'] %> </p>
+
+<% button_data=content['content'] %>
+
+<% for (var myKey in button_data) { %>
+    <% subcontent = button_data[myKey] %>
+    <div class="gpao-params">
+        <% if (subcontent['Value'] == true) { %>
+            <input type="radio" id=" <%= subcontent['Key'] %> " name=" <%= subcontent['Key'] %>" value=" <%= subcontent['Key'] %>" "checked">
+        <% } else { %>
+            <input type="radio" id=" <%= subcontent['Key'] %> " name=" <%= subcontent['Key'] %>" value=" <%= subcontent['Key'] %>">
+        <% } %>
+        
+        <label for=" <%= subcontent['Key'] %>"> <%= subcontent['Name'] %> </label>
+
+    </div>
+<% } %>

@@ -1,0 +1,11 @@
+<!-- views/ihm/checkbox.ejs -->
+
+<div class="gpao-params">
+    <label for= "<%=content['Key'] %>"> <%=content['Name'] %> </label>
+    <% if (content['Value'] == true) { %>
+        <input type="checkbox" id=" <%= content['Key'] %> " name=" <%= content['key'] %>" "checked">
+    <% } else { %>
+        <input type="checkbox" id=" <%= content['Key'] %> " name=" <%= content['key'] %>">
+    <% } %>
+    
+</div>

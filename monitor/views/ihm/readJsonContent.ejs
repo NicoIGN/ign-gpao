@@ -1,0 +1,45 @@
+<!-- views/ihm/readJsonContent.ejs -->
+
+<% for(var myKey in content) { %>
+
+  <% if (content[myKey].hasOwnProperty('Type')) { %>
+
+    <% if (content[myKey]['Type'] == 'Page') { %>
+        <%- include ("./page", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'Group') { %>
+          <%- include ("./group", {content:content[myKey]} ) %>
+     <% } %>
+
+    <% if (content[myKey]['Type'] == 'ComboBox') { %>
+        <%- include ("./combobox", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'CheckBox') { %>
+        <%- include ("./checkbox", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'Label') { %>
+            <%- include ("./label", {content:content[myKey]} ) %>
+        <% } %>
+
+    <% if (content[myKey]['Type'] == 'LineEdit') { %>
+            <%- include ("./lineedit", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'FileSelector') { %>
+            <%- include ("./fileselector", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'FolderSelector') { %>
+        <%- include ("./folderselector", {content:content[myKey]} ) %>
+    <% } %>
+
+    <% if (content[myKey]['Type'] == 'ButtonGroup') { %>
+        <%- include ("./radiogroup", {content:content[myKey]} ) %>
+    <% } %>
+    
+<% } %>
+
+<% } %>
