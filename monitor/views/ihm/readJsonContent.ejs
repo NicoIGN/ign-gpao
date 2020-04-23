@@ -7,7 +7,7 @@
   <% if (content[myKey].hasOwnProperty('Type')) { %>
 
     <% if (content[myKey]['Type'] == 'Page') { %>
-        <% console.log( 'page:', numpage) %>
+        <% console.log( 'on parse la page:', numpage, content[myKey]['Name']) %>
         <% numpage=numpage+1; %>
         <%- include ("./page", {content:content[myKey], numpage:numpage} ) %>
     <% } %>
