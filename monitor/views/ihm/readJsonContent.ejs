@@ -1,11 +1,15 @@
 <!-- views/ihm/readJsonContent.ejs -->
 
+<% var numpage=0; %>
+
 <% for(var myKey in content) { %>
 
   <% if (content[myKey].hasOwnProperty('Type')) { %>
 
     <% if (content[myKey]['Type'] == 'Page') { %>
-        <%- include ("./page", {content:content[myKey]} ) %>
+        <% console.log( 'page:', numpage) %>
+        <% numpage=numpage+1; %>
+        <%- include ("./page", {content:content[myKey], numpage:numpage} ) %>
     <% } %>
 
     <% if (content[myKey]['Type'] == 'Group') { %>

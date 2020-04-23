@@ -12,11 +12,18 @@
 </header>
 
 <main>
+    
     <div class="jumbotron">
+        <%- include ("../ihm/style") %>
+
         <form action="getParams" method="post" class="gpao-params">
-        <% for(var myKey in json ) { %>
-             <%- include ("../ihm/readJsonContent", {content:json[myKey]} ) %>
-         <% } %>
+        <div class=gpao-ihm>
+            <div class=tabs>
+                <% for(var myKey in json ) { %>
+                     <%- include ("../ihm/readJsonContent", {content:json[myKey]} ) %>
+                 <% } %>
+             </div>
+         </div>
          <button >Créer le chantier</button>
          </form>
     </div>

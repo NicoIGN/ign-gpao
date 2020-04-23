@@ -1,18 +1,12 @@
 <!-- views/ihm/page.ejs -->
 
-<fieldset><legend>  </legend>
+<div id=tab<%=numpage%> > <a href="#tab<%=numpage%>" ><%=content['Name']%> </a>
 
-<% if (content.hasOwnProperty('Name')) { %>
-    <fieldset><legend>
-    <%= content['Name'] %>
-    </legend>
-    
-<% } else { %>
-    <fieldset>\n<legend>  </legend>
-<% } %>
+<div>
 
 <% if (content.hasOwnProperty('content')) { %>
     <%- include ("./readJsonContent", {content:content['content']} ) %>
 <% } %>
 
-</fieldset>
+</div>
+</div>

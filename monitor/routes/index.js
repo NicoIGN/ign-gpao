@@ -43,9 +43,9 @@ router.get('/creation', function(req, res) {
 router.post('/getParams', function(req, res) {
 
     for(myKey in req.body) {
-            console.log(myKey,':', req.body[myKey]);
+            console.log(myKey,':', JSON.stringify(req.body, null, '\t  '));
     }
-    res.send(JSON.stringify(req.body), null, '\n  ');
+    res.send(JSON.stringify(req.body, null, '\t  '));
 });
 
 
