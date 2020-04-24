@@ -1,7 +1,17 @@
 <!-- views/ihm/folderselector.ejs -->
 
-<div class="gpao-params">
+
+<% if (custom_style == 'p') { %>
+    <p>
+<% } else {%>
+    <a>
+<% } %>
+
     <label for="<%=content['Key']%>"> <%=content['Name']%> </label>
     <input type="file" id="<%=content['Key']%>" name="<%=content['Key']%>" webkitdirectory directory/>
-
-</div>
+    
+<% if (custom_style == 'p') { %>
+    </p>
+<% } else {%>
+    </a>
+<% } %>

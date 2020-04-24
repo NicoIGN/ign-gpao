@@ -1,6 +1,16 @@
 <!-- views/ihm/fileselector.ejs -->
 
-<div class="gpao-params">
-    <label for="<%=content['Key']%>"> <%=content['Name']%> </label>
-    <input type="file" id="<%=content['Key']%>" name="<%=content['Key']%>"/>
-</div>
+    <% if (custom_style == 'p') { %>
+        <p>
+    <% } else {%>
+        <a>
+    <% } %>
+    
+        <label for="<%=content['Key']%>"> <%=content['Name']%> </label>
+        <input type="file" id="<%=content['Key']%>" name="<%=content['Key']%>"/>
+        
+    <% if (custom_style == 'p') { %>
+        </p>
+    <% } else {%>
+        </a>
+    <% } %>

@@ -1,19 +1,60 @@
 <!-- views/ihm/radiogroup.ejs -->
 
+<% if (custom_style == 'p') { %>
+    <p>
+<% } else {%>
+    <a>
+<% } %>
+ 
 <p> <%=content['Name']%> </p>
 
 <% button_data=content['content'] %>
 
-<% for (var myKey in button_data) { %>
-    <% subcontent = button_data[myKey] %>
-    <div class="gpao-params">
-        <% if (subcontent['Value'] == true) { %>
-            <input type="radio" id="<%=subcontent['Key']%>" name="<%=content['Key']%>" value="<%=subcontent['Key']%>" checked>
-        <% } else { %>
-            <input type="radio" id="<%=subcontent['Key']%>" name="<%=content['Key']%>" value="<%=subcontent['Key']%>">
-        <% } %>
-        <label for="<%=subcontent['Key']%>"><%=subcontent['Name']%></label>
-    </div>
+<% let custom_group_style='p' %>
+
+<% if (content.hasOwnProperty('GroupType')) { %>
+   <% if (content['GroupType'] == 'HorizontalGroup') { %>
+        <% custom_group_style='a' %>
+   <% } %>
 <% } %>
 
 
+<% if (custom_group_style == 'p') { %>
+    <p>
+<% } else {%>
+    <a>
+<% } %>
+
+<div class="gpao-params">
+
+<% for (var myKey in button_data) { %>
+    <% subcontent = button_data[myKey] %>
+    
+        <% if (custom_group_style == 'p') { %>
+            <p>
+        <% } else {%>
+            <a>
+        <% } %>
+        
+            <% if (subcontent['Value'] == true) { %>
+                <input type="radio" id="<%=subcontent['Key']%>" name="<%=content['Key']%>" value="<%=subcontent['Key']%>" checked>
+            <% } else { %>
+                <input type="radio" id="<%=subcontent['Key']%>" name="<%=content['Key']%>" value="<%=subcontent['Key']%>">
+            <% } %>
+            <label for="<%=subcontent['Key']%>"><%=subcontent['Name']%></label>
+            
+        <% if (custom_group_style == 'p') { %>
+            </p>
+        <% } else {%>
+            </a>
+        <% } %>
+<% } %>
+
+</div>
+
+
+<% if (custom_style == 'p') { %>
+    </p>
+<% } else {%>
+    </a>
+<% } %>

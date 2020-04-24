@@ -5,7 +5,7 @@
 <div>
 
 <% if (content.hasOwnProperty('content')) { %>
-    <%- include ("./readJsonContent", {content:content['content']} ) %>
+    <%- include ("./readJsonContent", {content:content['content'], custom_style:custom_style} ) %>
 <% } %>
 
 </div>

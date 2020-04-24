@@ -1,5 +1,17 @@
 <!-- views/ihm/label.ejs -->
 
-<div class="gpao-params">
+    
+<% if (custom_style == 'p') { %>
+    <p>
+<% } else {%>
+    <a>
+<% } %>
+
     <label for= "<%=content['Key'] %>"> <%=content['Name'] %> </label>
-</div>
+    
+<% if (custom_style == 'p') { %>
+    </p>
+<% } else {%>
+    </a>
+<% } %>
+
