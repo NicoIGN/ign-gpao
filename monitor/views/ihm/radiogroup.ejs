@@ -9,7 +9,6 @@
 <p> <%=content['Name']%> </p>
 
 <% button_data=content['content'] %>
-
 <% let custom_group_style='p' %>
 
 <% if (content.hasOwnProperty('GroupType')) { %>
@@ -18,14 +17,11 @@
    <% } %>
 <% } %>
 
-
 <% if (custom_group_style == 'p') { %>
     <p>
 <% } else {%>
     <a>
 <% } %>
-
-<div class="gpao-params">
 
 <% for (var myKey in button_data) { %>
     <% subcontent = button_data[myKey] %>
@@ -49,9 +45,6 @@
             </a>
         <% } %>
 <% } %>
-
-</div>
-
 
 <% if (custom_style == 'p') { %>
     </p>

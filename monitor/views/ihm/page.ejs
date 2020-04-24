@@ -1,8 +1,7 @@
 <!-- views/ihm/page.ejs -->
 
 <div id=tab<%=numpage%> > <a href="#tab<%=numpage%>" ><%=content['Name']%> </a>
-
-<div>
+<div class="gpao-params">
 
 <% if (content.hasOwnProperty('content')) { %>
     <%- include ("./readJsonContent", {content:content['content'], custom_style:custom_style} ) %>
