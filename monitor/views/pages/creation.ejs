@@ -3,34 +3,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include ("../partials/head") %>
+    <%- include("../partials/head") %>
 </head>
 <body class="container">
 
 <header>
-    <%- include ("../partials/header") %>
+    <%- include("../partials/header") %>
 </header>
 
 <main>
     
     <div class="jumbotron">
-        <%- include ("../ihm/style") %>
+        <%- include("../ihm/style") %>
         <% var align='row' %>
         <form action="getParams" method="post" class="gpao-params">
         <div class=gpao-ihm>
             <div class=tabs>
                 <% for(var myKey in json ) { %>
-                     <%- include ("../ihm/readJsonContent", {content:json[myKey],custom_style:'p'} ) %>
+                     <%- include("../ihm/readJsonContent", {content:json[myKey],custom_style:'p'} ) %>
                  <% } %>
              </div>
          </div>
          <button >Créer le chantier</button>
          </form>
+         
     </div>
 </main>
 
 <footer>
-    <%- include ("../partials/footer") %>
+    <%- include("../partials/footer") %>
 </footer>
 
 </body>
