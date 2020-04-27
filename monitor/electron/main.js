@@ -5,10 +5,16 @@ let mainWindow
  
 
 app.on('ready', () => {
-       mainWindow = new BrowserWindow()
+    //Create the new window
+       mainWindow = new BrowserWindow({
+           "width": 800,
+           "height": 800
+       });
        var jsonfile = '../data/ihm.json';
        ihm_data = require(jsonfile)['ihm'];
-       ejse.data('json', ihm_data)
+       ejse.data('electron', 'on');
+       ejse.data('json', ihm_data);
 
-       mainWindow.loadURL('file://' + __dirname + '/../views/pages/creation.ejs')
+       mainWindow.loadURL('file://' + __dirname + '/../views/pages/index.ejs');
+       //mainWindow.loadURL('file://' + __dirname + '/../views/pages/creation.ejs');
 })
