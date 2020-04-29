@@ -1,0 +1,9 @@
+<!-- views/ihm/electron/fileselector.ejs -->
+
+<% var myId='file-selector-' + content['Key'] %>
+<% var myContent='file-selector-content-' + content['Key'] %>
+
+<input type="button" id="<%=myId%>" value="Selectionner un fichier">
+<a id="<%=myContent%>"/>
+
+<script src="../../electron/renderer-process/fileselector.js" name="<%=content['Key']%>"></script>

@@ -1,0 +1,14 @@
+<!-- views/ihm/electron/folderselector.ejs -->
+<div class="toto">
+<script>
+    const {ipcRenderer}=require('electron')'
+    
+    function clickButton(){
+    ipcRenderer.send('click-button','true')
+}
+    ipcRenderer.send('openFile',()={
+    })
+}
+</script>
+<button onclick="clickButton()"> Open File </button>
+</div>

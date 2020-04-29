@@ -38,11 +38,11 @@
 <!-- file paths supported with electron but not supported in html -->
     <% if (electron == 'on') { %>
         <% if (content[myKey]['Type'] == 'FileSelector') { %>
-                <%- include("./fileselector", {content:content[myKey],custom_style:custom_style} ) %>
+                <%- include("./electron/fileselector", {content:content[myKey],custom_style:custom_style} ) %>
         <% } %>
 
         <% if (content[myKey]['Type'] == 'FolderSelector') { %>
-            <%- include("./folderselector", {content:content[myKey],custom_style:custom_style} ) %>
+            <%- include("./electron/folderselector", {content:content[myKey],custom_style:custom_style} ) %>
         <% } %>
     <% } else { %>
         <% if (content[myKey]['Type'] == 'FileSelector') { %>

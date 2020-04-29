@@ -1,8 +1,10 @@
-const {app, BrowserWindow} = require('electron')
 const ejse = require('ejs-electron')
  
-let mainWindow
- 
+const electron = require('electron'),
+app = electron.app,
+BrowserWindow = electron.BrowserWindow;
+
+let mainWindow;
 
 app.on('ready', () => {
     //Create the new window
@@ -17,4 +19,16 @@ app.on('ready', () => {
 
        //mainWindow.loadURL('file://' + __dirname + '/../views/pages/index.ejs');
        mainWindow.loadURL('file://' + __dirname + '/../views/pages/creation.ejs');
+})
+
+app.on('window-all-closed', function () {
+ if (process.platform !== 'darwin') {
+  app.quit()
+ }
+})
+
+app.on('activate', function () {
+ if (mainWindow === null) {
+  createWindow()
+ }
 })
