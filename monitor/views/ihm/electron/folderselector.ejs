@@ -1,14 +1,16 @@
 <!-- views/ihm/electron/folderselector.ejs -->
-<div class="toto">
-<script>
-    const {ipcRenderer}=require('electron')'
-    
-    function clickButton(){
-    ipcRenderer.send('click-button','true')
-}
-    ipcRenderer.send('openFile',()={
-    })
-}
-</script>
-<button onclick="clickButton()"> Open File </button>
-</div>
+<p>
+<% var myId='folder-selector-' + content['Key'] %>
+<% var myContent='folder-selector-content-' + content['Key'] %>
+
+<input type="button" id="<%=myId%>" value="Selectionner un dossier"></input>
+<!--a id="<%=myContent%>"/-->
+
+<% let myValue = '' %>
+<% if (content.hasOwnProperty('Value')) { %>
+    <% myValue = content['Value'] %>
+<% } %>
+
+<input type="text" id="<%=myContent%>" value="<%=myValue%>" name="<%=content['Key']%>"><%=myValue%></input>
+<script src="../../electron/renderer-process/folderselector.js" name="<%=content['Key']%>"></script>
+</p>

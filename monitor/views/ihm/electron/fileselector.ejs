@@ -1,9 +1,17 @@
 <!-- views/ihm/electron/fileselector.ejs -->
-
+<p>
 <% var myId='file-selector-' + content['Key'] %>
 <% var myContent='file-selector-content-' + content['Key'] %>
 
 <input type="button" id="<%=myId%>" value="Selectionner un fichier">
-<a id="<%=myContent%>"/>
+<a id="<%=myContent%>"></input>
+
+<% let myValue = '' %>
+<% if (content.hasOwnProperty('Value')) { %>
+    <% myValue = content['Value'] %>
+<% } %>
+
+<input type="text" id="<%=myContent%>2" value="<%=myValue%>" name="<%=content['Key']%>"><%=myValue%></input>
 
 <script src="../../electron/renderer-process/fileselector.js" name="<%=content['Key']%>"></script>
+</p>

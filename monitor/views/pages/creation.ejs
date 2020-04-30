@@ -24,7 +24,12 @@
                  <% } %>
              </div>
          </div>
-         <button >Créer le chantier</button>
+         
+         <% if (electron == 'on') { %>
+            <%- include("../ihm/electron/filesaver.ejs", {id:'create-chantier',params:'gpao-params'}) %>
+         <%} else { %>
+            <button >Créer le chantier</button>
+         <% } %>
          </form>
     </div>
 </main>
