@@ -40,7 +40,7 @@
           jsonParams={};
           jsonParams['parameters'] = jsonData;
             try {
-              fs.writeFileSync(filename, JSON.stringify(jsonParams), 'utf-8');
+              fs.writeFileSync(filename, JSON.stringify(jsonParams, null, '\t'), 'utf-8');
             }
             catch(e) {
               console.log('cannot save file ', filename);
